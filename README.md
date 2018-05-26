@@ -3,10 +3,12 @@ RAML api for a simple bookstore, use the go-raml to generate a server and client
 ## Install
 
 `$ cd c:\user\BookStore`
+
 and type:
 
-`git init`
-`git clone https://github.com/BolaNasr/BookStore-API.git`
+`$ git init`
+
+`$ git clone https://github.com/BolaNasr/BookStore-API.git`
 
 ### Using Python Server
 `$  cd BookStore-API\server`
