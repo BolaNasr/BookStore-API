@@ -1,5 +1,5 @@
 # BookStore-API
- api for a simple bookstore, use the [go-raml] (https://github.com/Jumpscale/go-raml) to generate a server and client
+ api for a simple bookstore, use the [go-raml](https://github.com/Jumpscale/go-raml) to generate a server and client
  
 ### To run the Server
 
@@ -25,3 +25,6 @@ There are many ways to view and edit RAML file:
 
 - [API Workbench](http://apiworkbench.com/) is an atom package for designing, building, testing, documenting and sharing RESTful HTTP APIs
 - Vim : it is enough for simple purpose
+
+## [Book Store specification](https://github.com/BolaNasr/BookStore-API/blob/master/BookStore.md)
+
