@@ -3,8 +3,6 @@
 from flask import Blueprint
 import handlers
 
-import oauth2_oauth_2_0 as oauth2_oauth_2_0
-
 
 booksstore_api = Blueprint('booksstore_api', __name__)
 
@@ -18,7 +16,6 @@ def books_get():
 
 
 @booksstore_api.route('/books', methods=['POST'])
-@oauth2_oauth_2_0.oauth2_oauth_2_0([])
 def books_post():
     """
     It is handler for POST /books
@@ -45,7 +42,6 @@ def books_byBookId_put(bookId):
 
 
 @booksstore_api.route('/books/<bookId>', methods=['DELETE'])
-@oauth2_oauth_2_0.oauth2_oauth_2_0([])
 def books_byBookId_delete(bookId):
     """
     Remove book from the Store.

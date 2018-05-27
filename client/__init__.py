@@ -3,20 +3,11 @@
 
 from .BooksStore_service import BooksStoreService
 
-from .oauth2_client_oauth_2_0 import Oauth2ClientOauth_2_0
-from .basicauth_client_basic_auth import BasicAuthClientBasic_auth
 from .http_client import HTTPClient
 
 
 class Client:
     def __init__(self, base_uri="http://localhost:5000"):
         http_client = HTTPClient(base_uri)
-        self.security_schemes = Security(http_client)
         self.BooksStore = BooksStoreService(http_client)
         self.close = http_client.close
-
-
-class Security:
-    def __init__(self, http_client):
-        self.oauth2_client_oauth_2_0 = Oauth2ClientOauth_2_0(http_client)
-        self.basicauth_client_basic_auth = BasicAuthClientBasic_auth(http_client)

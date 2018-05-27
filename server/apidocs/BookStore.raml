@@ -3,30 +3,6 @@ title: Book Store ApI
 version: 1.0
 baseUri: http://localhost:5000
 mediaType:  application/json
-securitySchemes:
-   oauth_2_0:
-      type: OAuth 2.0
-      settings:
-        authorizationUri: https://accounts.google.com/o/oauth2/auth
-        accessTokenUri: https://accounts.google.com/o/oauth2/token
-        authorizationGrants: [ authorization_code,implicit,password,client_credentials ]
-        scopes:
-           https://www.googleapis.com/auth/userinfo.email
-      describedBy:
-        headers:
-          Authorization:
-            description: |
-              Used to send a valid OAuth 2 access token.
-        queryParameters:
-          access_token:
-            description: |
-              Used to send a valid OAuth 2 access token.
-        responses:
-          401:
-            description: |
-              Authorization error.
-   basic_auth:
-    type: Basic Authentication
 
 /books:
   displayName: Books Store
@@ -40,30 +16,30 @@ securitySchemes:
                   "bookId": 1
                   "title": "The First Book"
                   "subTitle": "Introduction to Programming"
-                  "authors": ["Marijn Haverbeke"]
+                  "authors": "Marijn Haverbeke"
               example2:
                   "bookId": 2
                   "title": "The Secnod Book"
                   "subTitle": "Introduction to Programming"
-                  "authors": ["Marijn Haverbeke"]
+                  "authors": "Marijn Haverbeke"
               example3:
                   "bookId": 3
                   "title": "The Third Book"
                   "subTitle": "Introduction to Programming"
-                  "authors": ["Marijn Haverbeke"]
+                  "authors": "Marijn Haverbeke"
               example4:
                   "bookId": 4
                   "title": "The Forth Book"
                   "subTitle": "Introduction to programming"
-                  "authors": ["Marijn Haverbeke"]
+                  "authors": "Marijn Haverbeke"
   post:
-    securedBy: [oauth_2_0,basic_auth]
+
     body:
       application/json:
         example:
              "title": "New Book"
              "subTitle": "Introduction to programming"
-             "authors": ["Marijn Haverbeke"]
+             "authors": "Marijn Haverbeke"
     responses:
       201:
         description: Book has been successfully created.
@@ -86,7 +62,8 @@ securitySchemes:
                   "bookId": 1,
                   "title": "The First Book"
                   "subTitle": "Introduction to python programming"
-                  "authors": ["Marijn Haverbeke"]
+                  "authors": "Marijn Haverbeke"
+
     put:
       description: Update book information.
       body:
@@ -95,7 +72,7 @@ securitySchemes:
 
              "title": "Updated one"
              "subTitle": "Introduction to python programming"
-             "authors": ["Marijn Haverbeke"]
+             "authors": "Marijn Haverbeke"
 
       responses:
         204:
@@ -105,7 +82,7 @@ securitySchemes:
           description: |
             Unable to find book ... check Book ID.
     delete:
-      securedBy: [oauth_2_0,basic_auth]
+
       description: Remove book from the Store.
       responses:
         204:
